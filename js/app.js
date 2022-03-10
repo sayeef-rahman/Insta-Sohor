@@ -1,6 +1,6 @@
 let posts=[ ];
 
-const likedPostsId = [];
+let likedPostsId = [];
 const reportedPostsId = [];
 
 const getLikedPosts = () => {
@@ -17,8 +17,10 @@ const isLiked = (id) => {
 };
 
 const addToLiked = (id) => {
-    likedPostsId.plus(id); 
+    //likedPostsId=null;
+    likedPostsId.push(id); 
     showPosts(posts);
+    id = 0;
 };
 
 const reportPost = (id) => {
@@ -32,6 +34,7 @@ const displayContent = (text) => {
 };
 
 const switchTab = (id) => {
+  
     if (id === "posts") {
         document.getElementById( "posts" ).style.display = "grid";
         document.getElementById( "liked" ).style.display = "none";
@@ -52,6 +55,7 @@ const switchTab = (id) => {
 };
 
 const createPost = (post) => {
+    // console.log('in createPost: ',post);
     const div = document.createElement( "article" );
     div.classList.add( "post" );
     div.innerHTML = `
