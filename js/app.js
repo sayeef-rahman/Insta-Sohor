@@ -1,7 +1,7 @@
 let posts=[ ];
 
 let likedPostsId = [];
-const reportedPostsId = [];
+let reportedPostsId = [];
 
 const getLikedPosts = () => {
   
@@ -161,8 +161,9 @@ const displayLikedPosts = () => {
 
 const displayReportedPosts = () => {
     const reportedPosts = getReportedPosts();
-    posts.forEach((post) => {
-        const div = createPost(post);
+    let div=document.getElementById("reported").innerHTML='';
+    reportedPosts.forEach((post) => {
+         div = createPost(post);
         document.getElementById( "reported" ).appendChild(div);
     });
 };
