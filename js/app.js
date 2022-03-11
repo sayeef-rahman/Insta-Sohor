@@ -151,6 +151,8 @@ const showPosts = (posts) => {
 
 
 const displayLikedPosts = () => {
+    const displayQA= document.getElementById('questions');
+    displayQA.innerHTML= '';
     const likedPosts = getLikedPosts();
     let div=document.getElementById("liked").innerHTML='';
     likedPosts.forEach((post) => {
@@ -160,6 +162,8 @@ const displayLikedPosts = () => {
 };
 
 const displayReportedPosts = () => {
+    const displayQA= document.getElementById('questions');
+    displayQA.innerHTML= '';
     const reportedPosts = getReportedPosts();
     let div=document.getElementById("reported").innerHTML='';
     reportedPosts.forEach((post) => {
